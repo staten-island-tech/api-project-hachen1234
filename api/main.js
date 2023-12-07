@@ -9,8 +9,11 @@ async function getdata(url) {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data.data);
     return data.data;
-  } catch (error) {}
+  } catch (error) {
+    document.querySelector("h1").textContent = "sad";
+  }
 }
 
 const promise = getdata(url);
@@ -18,13 +21,13 @@ const promise = getdata(url);
 promise.then(function insertcard(data) {
   data.forEach((data) => {
     dom.display.insertAdjacentHTML(
-      "afterbegin",
+      "beforeend",
       ` 
       <div class="card">
             <h2 class="name">${data.name}</h2>
             <img class="image"src="${data.image}" alt="">
-      
-          
+            <h3 class="text">${data.description}</h3>
+            <p class="text">${data.location}</p>
             `
     );
   });
