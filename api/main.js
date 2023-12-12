@@ -1,4 +1,3 @@
-const ur1 = "https://eldenring.fanapis.com/api?limit=1000";
 const url2 = "https://eldenring.fanapis.com/api/bosses?limit=1000";
 const url3 = "https://eldenring.fanapis.com/api/sorceries?limit=1000";
 const dom = {
@@ -26,7 +25,7 @@ dom.bossesbtn.addEventListener("click", function () {
     data.forEach((data) => {
       dom.display.insertAdjacentHTML(
         "beforeend",
-        ` 
+        ` <div>
         <div class="card">
         <p class="subtitle">Name</p>
               <h3 class="name">${data.name}</h3>
@@ -37,6 +36,7 @@ dom.bossesbtn.addEventListener("click", function () {
               <h3 class="text">${data.location}</h3>
               <p class="subtitle">Drops</p>
               <h3 class="drops">${data.drops}</h3>
+              <div>
               `
       );
     });
@@ -59,6 +59,8 @@ dom.sorceriesbtn.addEventListener("click", function () {
       dom.display.insertAdjacentHTML(
         "beforeend",
         ` 
+        <div>
+  
         <div class="card">
         <p class="subtitle">Name</p>
               <h3 class="name">${data.name}</h3>
@@ -69,6 +71,7 @@ dom.sorceriesbtn.addEventListener("click", function () {
               <h3 class="text">${data.effects}</h3>
               <p class="subtitle">Drops</p>
               <h3 class="cost">${data.cost}</h3>
+              <div>
               `
       );
     });
