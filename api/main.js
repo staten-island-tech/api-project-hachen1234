@@ -7,6 +7,7 @@ const dom = {
   npcbtn: document.querySelector(".npc"),
   bossesbtn: document.querySelector(".bosses"),
   sorceriesbtn: document.querySelector(".sorceries"),
+  search: document.querySelector(".search"),
 };
 function clear() {
   dom.display.innerHTML = "";
@@ -109,4 +110,8 @@ dom.sorceriesbtn.addEventListener("click", function () {
       );
     });
   });
+});
+
+dom.search.addEventListener("submit", function () {
+  console.log(search);
 });
