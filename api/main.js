@@ -7,8 +7,13 @@ const dom = {
   npcbtn: document.querySelector(".npc"),
   bossesbtn: document.querySelector(".bosses"),
   sorceriesbtn: document.querySelector(".sorceries"),
-  search: document.querySelector(".search-input"),
+  searchinput: document.querySelector(".search-input"),
+  search: document.querySelector(".search"),
 };
+dom.searchinput.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log(dom.search.value);
+});
 function clear() {
   dom.display.innerHTML = "";
 }
@@ -76,6 +81,7 @@ dom.bossesbtn.addEventListener("click", function () {
     });
   });
 });
+
 dom.sorceriesbtn.addEventListener("click", function () {
   clear();
   async function getdata(url3) {
@@ -112,7 +118,28 @@ dom.sorceriesbtn.addEventListener("click", function () {
   });
 });
 
-dom.search.addEventListener("submit", function (e) {
-  e.preventDefault();
-  console.log(search.textContent);
-});
+async function getSearch(search) {
+  try {
+    const response = await fetch("${url}?name=${search}");
+    const data = await response.json();
+    data.forEach((data) => {
+      dom.display.insertAdjacentHTML(
+        "beforeend",
+        ` <div>
+        <div class="card">
+        <p class="subtitle">Name</p>
+              <h3 class="name">${data.name}</h3>
+              <img class="image"src="${data.image}" alt="">
+              <p class="subtitle">Quote</p>
+              <h3 class="description">${data.quote}</h3>
+              <p class="subtitle">Location</p>
+              <h3 class="text">${data.location}</h3>
+              <div>
+              `
+      );
+    });
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
