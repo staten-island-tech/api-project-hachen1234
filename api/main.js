@@ -10,10 +10,6 @@ const dom = {
   searchinput: document.querySelector(".search-input"),
   search: document.querySelector(".search"),
 };
-dom.searchinput.addEventListener("submit", function (e) {
-  e.preventDefault();
-  console.log(dom.search.value);
-});
 function clear() {
   dom.display.innerHTML = "";
 }
@@ -117,15 +113,24 @@ dom.sorceriesbtn.addEventListener("click", function () {
     });
   });
 });
-
-async function getSearch(search) {
-  try {
-    const response = await fetch("${url}?name=${search}");
-    const data = await response.json();
-    data.forEach((data) => {
-      dom.display.insertAdjacentHTML(
-        "beforeend",
-        ` <div>
+const searchinputvalue = dom.searchinput.addEventListener(
+  "submit",
+  function (e) {
+    e.preventDefault();
+    console.log(dom.search.value);
+  }
+);
+dom.searchinput.addEventListener(
+  "submit",
+  async function getSearch(searchinputvalue) {
+    try {
+      let Url = "https://eldenring.fanapis.com/api/npcs";
+      const response = await fetch(Url + "?name=" + searchinputvalue);
+      const data = await response.json();
+      data.data.forEach((data) => {
+        dom.display.insertAdjacentHTML(
+          "beforeend",
+          ` <div>
         <div class="card">
         <p class="subtitle">Name</p>
               <h3 class="name">${data.name}</h3>
@@ -136,10 +141,11 @@ async function getSearch(search) {
               <h3 class="text">${data.location}</h3>
               <div>
               `
-      );
-    });
-    console.log(data);
-  } catch (error) {
-    console.log(error);
+        );
+      });
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
+);
