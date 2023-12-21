@@ -120,6 +120,7 @@ const searchinputvalue = dom.searchinput.addEventListener(
     console.log(dom.search.value);
   }
 );
+
 dom.searchinput.addEventListener(
   "submit",
   async function getSearch(searchinputvalue) {
