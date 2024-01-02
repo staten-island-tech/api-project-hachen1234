@@ -13,6 +13,35 @@ const dom = {
 function clear() {
   dom.display.innerHTML = "";
 }
+
+async function getdata(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    document.querySelector("h1").textContent = "sad";
+  }
+}
+let promise = getdata(url);
+promise.then(function insertcard(data) {
+  data.forEach((data) => {
+    dom.display.insertAdjacentHTML(
+      "beforeend",
+      ` <div>
+      <div class="card">
+      <p class="subtitle">Name</p>
+            <h3 class="name">${data.name}</h3>
+            <img class="image"src="${data.image}" alt="">
+            <p class="subtitle">Quote</p>
+            <h3 class="description">${data.quote}</h3>
+            <p class="subtitle">Location</p>
+            <h3 class="text">${data.location}</h3>
+            <div>
+            `
+    );
+  });
+});
 dom.npcbtn.addEventListener("click", function () {
   clear();
   async function getdata(url) {
@@ -125,8 +154,8 @@ dom.searchinput.addEventListener(
   "submit",
   async function getSearch(searchinputvalue) {
     try {
-      let Url = "https://eldenring.fanapis.com/api/npcs";
-      const response = await fetch(Url + "?name=" + searchinputvalue);
+      let Url = "https://eldenring.fanapis.com/api/npcs?name=";
+      const response = await fetch(Url + "searchinputvalue");
       const data = await response.json();
       data.data.forEach((data) => {
         dom.display.insertAdjacentHTML(
