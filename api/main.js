@@ -150,19 +150,16 @@ const searchinputvalue = dom.searchinput.addEventListener(
   }
 );
 
-dom.searchinput.addEventListener(
-  "submit",
-  async function getSearch(searchinputvalue) {
-    try {
-      let Url = `https://eldenring.fanapis.com/api/npcs?name=${dom.search.value}}`;
-      const response = await fetch(Url);
-      const data = await response.json();
-      const data2 = Object.values(data);
-      console.log(data2);
-      data2.forEach((data) => {
-        dom.display.insertAdjacentHTML(
-          "beforeend",
-          ` <div>
+dom.searchinput.addEventListener("submit", async function getSearch() {
+  try {
+    let Url = `https://eldenring.fanapis.com/api/npcs?name=${dom.search.value}`;
+    const response = await fetch(Url);
+    const data = await response.json();
+    clear();
+    data.data.forEach((data) => {
+      dom.display.insertAdjacentHTML(
+        "beforeend",
+        ` <div>
         <div class="card">
         <p class="subtitle">Name</p>
               <h3 class="name">${data.name}</h3>
@@ -173,11 +170,9 @@ dom.searchinput.addEventListener(
               <h3 class="text">${data.location}</h3>
               <div>
               `
-        );
-      });
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
+      );
+    });
+  } catch (error) {
+    console.log(error);
   }
-);
+});
