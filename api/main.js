@@ -154,10 +154,12 @@ dom.searchinput.addEventListener(
   "submit",
   async function getSearch(searchinputvalue) {
     try {
-      let Url = "https://eldenring.fanapis.com/api/npcs?name=";
-      const response = await fetch(Url + "searchinputvalue");
+      let Url = `https://eldenring.fanapis.com/api/npcs?name=${dom.search.value}}`;
+      const response = await fetch(Url);
       const data = await response.json();
-      data.data.forEach((data) => {
+      const data2 = Object.values(data);
+      console.log(data2);
+      data2.forEach((data) => {
         dom.display.insertAdjacentHTML(
           "beforeend",
           ` <div>
