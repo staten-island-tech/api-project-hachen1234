@@ -176,3 +176,61 @@ dom.searchinput.addEventListener("submit", async function getSearch() {
     console.log(error);
   }
 });
+dom.searchinput.addEventListener("submit", async function getSearch() {
+  try {
+    let Url2 = `https://eldenring.fanapis.com/api/bosses?name=${dom.search.value}`;
+    const response = await fetch(Url2);
+    const data = await response.json();
+    clear();
+    data.data.forEach((data) => {
+      dom.display.insertAdjacentHTML(
+        "beforeend",
+        ` <div>
+        <div class="card">
+        <p class="subtitle">Name</p>
+              <h3 class="name">${data.name}</h3>
+              <img class="image"src="${data.image}" alt="">
+              <p class="subtitle">Description</p>
+              <h3 class="description">${data.description}</h3>
+              <p class="subtitle">Location</p>
+              <h3 class="text">${data.location}</h3>
+              <p class="subtitle">Drops</p>
+              <h3 class="drops">${data.drops}</h3>
+              <div>
+              `
+      );
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+dom.searchinput.addEventListener("submit", async function getSearch() {
+  try {
+    let Url3 = `https://eldenring.fanapis.com/api/incantations?name=${dom.search.value}`;
+    const response = await fetch(Url3);
+    const data = await response.json();
+    clear();
+    data.data.forEach((data) => {
+      dom.display.insertAdjacentHTML(
+        "beforeend",
+        ` 
+        <div>
+  
+        <div class="card">
+        <p class="subtitle">Name</p>
+              <h3 class="name">${data.name}</h3>
+              <img class="image"src="${data.image}" alt="">
+              <p class="subtitle">Description</p>
+              <h3 class="description">${data.description}</h3>
+              <p class="subtitle">Effects</p>
+              <h3 class="text">${data.effects}</h3>
+              <p class="subtitle">Drops</p>
+              <h3 class="cost">${data.cost}</h3>
+              <div>
+              `
+      );
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
