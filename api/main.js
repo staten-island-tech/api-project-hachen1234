@@ -1,7 +1,4 @@
-const url = "https://eldenring.fanapis.com/api/sorceries?limit=71";
-const dom = {
-  display: document.querySelector(".display"),
-};
+const url = "https://eldenring.fanapis.com/api/sorceries";
 
 async function getdata(url) {
   try {
@@ -10,4 +7,6 @@ async function getdata(url) {
     console.log(data);
   } catch (error) {}
 }
+getdata(url);
+
 getdata(url);
