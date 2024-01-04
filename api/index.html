@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css">
-    <title></title>
+    <title>Elden Ring Info</title>
   </head>
   <body>
     <nav class="title">
@@ -16,11 +16,12 @@
       <button class="bosses">Bosses</button>
       <button class="sorceries">Sorceries</button>
       <button class="items">Items</button>
+      <button class="theme">Change theme</button>
      </nav>
      <nav class="Search Bar">
-      <label for="Search">Search Things By Name</label>
       <form  class="search-input">
-       <input type="text" class="search" placeholder="Search">
+        <label id="searchLabel" for="search">Search Things By Name</label>
+       <input type="text" id="search" name="search" aria-labelledby="searchLabel" placeholder="Search">
        <button type="submit"> Search</button>
       </form> </nav>
       <nav class="Display Info">

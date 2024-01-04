@@ -9,6 +9,7 @@ const dom = {
   bossesbtn: document.querySelector(".bosses"),
   sorceriesbtn: document.querySelector(".sorceries"),
   itemsbtn: document.querySelector(".items"),
+  themebtn: document.querySelector(".theme"),
   searchinput: document.querySelector(".search-input"),
   search: document.querySelector(".search"),
 };
