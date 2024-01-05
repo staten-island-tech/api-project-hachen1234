@@ -11,7 +11,7 @@ const dom = {
   itemsbtn: document.querySelector(".items"),
   themebtn: document.querySelector(".theme"),
   searchinput: document.querySelector(".search-input"),
-  search: document.querySelector(".search"),
+  search: document.querySelector("#search"),
 };
 function clear() {
   dom.display.innerHTML = "";
@@ -292,5 +292,14 @@ dom.searchinput.addEventListener("submit", async function getSearch() {
     });
   } catch (error) {
     console.log(error);
+  }
+});
+dom.themebtn.addEventListener("click", function () {
+  if (document.body.classList.contains("darkmoon")) {
+    document.body.classList.add("goldenorder");
+    document.body.classList.remove("darkmoon");
+  } else {
+    document.body.classList.add("darkmoon");
+    document.body.classList.remove("goldenorder");
   }
 });

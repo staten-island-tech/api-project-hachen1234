@@ -2,6 +2,9 @@
   --darkblue: #11235a;
   --lightblue: #c5dff8;
   --white: #f5fbff;
+  --yellow: #fae588;
+  --brown: #a63c06;
+  --yellower: #ffff3f;
   box-sizing: border-box;
   font-size: 10px;
   padding: 0;
@@ -9,6 +12,7 @@
   --primary: var(--darkblue);
   --secondary: var(--lightblue);
   --third: var(--white);
+  font-family: "EB Garamond", serif;
 }
 .darkmoon {
   --primary: var(--darkblue);
@@ -16,9 +20,9 @@
   --third: var(--white);
 }
 .goldenorder {
-  --primary: var(--green);
-  --secondary: var(--brown);
-  --third: var(--blue);
+  --primary: var(--brown);
+  --secondary: var(--yellow);
+  --third: var(--yellower);
 }
 body {
   background-color: var(--primary);
@@ -46,4 +50,29 @@ img {
 }
 .subtitle {
   font-size: 2rem;
+}
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+.buttons {
+  text-align: center;
+}
+button {
+  margin: 1rem;
+  background-color: var(--secondary);
+}
+#searchLabel {
+  font-size: 2rem;
+}
+.search-input {
+  text-align: center;
+}
+#search {
+  background-color: var(--third);
+}
+.searchdirection {
+  text-align: center;
 }

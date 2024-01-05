@@ -5,6 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Handlee&display=swap" rel="stylesheet">
+    
     <title>Elden Ring Info</title>
   </head>
   <body>
@@ -19,8 +23,10 @@
       <button class="theme">Change theme</button>
      </nav>
      <nav class="Search Bar">
-      <form  class="search-input">
+      <div class="searchdirection">
         <label id="searchLabel" for="search">Search Things By Name</label>
+       </div>
+      <form  class="search-input">
        <input type="text" id="search" name="search" aria-labelledby="searchLabel" placeholder="Search">
        <button type="submit"> Search</button>
       </form> </nav>
