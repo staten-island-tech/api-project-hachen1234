@@ -2,8 +2,10 @@
   --darkblue: #11235a;
   --lightblue: #c5dff8;
   --white: #f5fbff;
+  --blue: #023e8a;
   --yellow: #fae588;
   --brown: #a63c06;
+  --browner: #bc6c25;
   --yellower: #ffff3f;
   box-sizing: border-box;
   font-size: 10px;
@@ -12,17 +14,20 @@
   --primary: var(--darkblue);
   --secondary: var(--lightblue);
   --third: var(--white);
+  --fourth: var(--blue);
   font-family: "EB Garamond", serif;
 }
 .darkmoon {
   --primary: var(--darkblue);
   --secondary: var(--lightblue);
   --third: var(--white);
+  --fourth: var(--blue);
 }
 .goldenorder {
   --primary: var(--brown);
   --secondary: var(--yellow);
   --third: var(--yellower);
+  --fourth: var(--browner);
 }
 body {
   background-color: var(--primary);
@@ -40,13 +45,19 @@ h3 {
   align-items: center;
 }
 .card {
-  width: 30rem;
-  height: 80rem;
+  width: 35rem;
+  height: 60rem;
   margin: 4rem;
   font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--third);
+  border-radius: 2rem;
+  background-color: var(--fourth);
 }
 img {
   width: 30rem;
+  height: 25rem;
+  border-radius: 2rem;
 }
 .subtitle {
   font-size: 2rem;
