@@ -3,10 +3,10 @@
   --lightblue: #c5dff8;
   --white: #f5fbff;
   --blue: #023e8a;
-  --yellow: #fae588;
-  --brown: #a63c06;
-  --browner: #bc6c25;
-  --yellower: #ffff3f;
+  --yellow: #edf2f4;
+  --brown: #b98b73;
+  --browner: #603808;
+  --black: #2b2d42;
   box-sizing: border-box;
   font-size: 10px;
   padding: 0;
@@ -23,10 +23,10 @@
   --third: var(--white);
   --fourth: var(--blue);
 }
-.goldenorder {
-  --primary: var(--brown);
+.secondcolor {
+  --primary: var(--black);
   --secondary: var(--yellow);
-  --third: var(--yellower);
+  --third: var(--white);
   --fourth: var(--browner);
 }
 body {
@@ -35,6 +35,7 @@ body {
 }
 h3 {
   color: var(--third);
+  font-size: 1.5rem;
 }
 .display {
   display: flex;
@@ -46,7 +47,7 @@ h3 {
 }
 .card {
   width: 35rem;
-  height: 60rem;
+  height: 75rem;
   margin: 4rem;
   font-size: 1.5rem;
   text-align: center;
@@ -55,8 +56,8 @@ h3 {
   background-color: var(--fourth);
 }
 img {
-  width: 30rem;
-  height: 25rem;
+  width: 25rem;
+  height: 20rem;
   border-radius: 2rem;
 }
 .subtitle {
@@ -82,7 +83,7 @@ button {
   text-align: center;
 }
 #search {
-  background-color: var(--third);
+  background-color: var(--secondary);
 }
 .searchdirection {
   text-align: center;

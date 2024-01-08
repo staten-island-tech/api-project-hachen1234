@@ -137,8 +137,6 @@ dom.sorceriesbtn.addEventListener("click", function () {
               <h3 class="description">${data.description}</h3>
               <p class="subtitle">Effects</p>
               <h3 class="text">${data.effects}</h3>
-              <p class="subtitle">Drops</p>
-              <h3 class="cost">${data.cost}</h3>
               <div>
               `
       );
@@ -296,10 +294,10 @@ dom.searchinput.addEventListener("submit", async function getSearch() {
 });
 dom.themebtn.addEventListener("click", function () {
   if (document.body.classList.contains("darkmoon")) {
-    document.body.classList.add("goldenorder");
+    document.body.classList.add("secondcolor");
     document.body.classList.remove("darkmoon");
   } else {
     document.body.classList.add("darkmoon");
-    document.body.classList.remove("goldenorder");
+    document.body.classList.remove("secondcolor");
   }
 });
